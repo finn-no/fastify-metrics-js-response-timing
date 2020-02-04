@@ -70,7 +70,7 @@ All status codes in the range `200-299` will be captured as `2xx`, `300-399` as 
 ## Plugin options
 
 ```js
-app.register(pluginMetrics, { groupStatusCodes });
+app.register(pluginMetrics, { timeAllRoutes, groupStatusCodes });
 ```
 
 | name             | description                                            | type      | default | required |
