@@ -1,0 +1,37 @@
+{
+  "name": "fastify-metrics-js-response-timing",
+  "version": "1.0.0",
+  "description": "A Fastify plugin using @metrics/client (https://www.npmjs.com/package/@metrics/client) to produce metric streams reporting metrics about route response times",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap",
+    "lint:format": "eslint --fix .",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finn-no/fastify-metrics-js-response-timing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finn-no/fastify-metrics-js-response-timing/issues"
+  },
+  "homepage": "https://github.com/finn-no/fastify-metrics-js-response-timing#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "fastify": "^2.11.0",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
+    "tap": "^14.10.6"
+  },
+  "dependencies": {
+    "@metrics/client": "^2.5.0",
+    "fastify-plugin": "^1.6.0"
+  }
+}
