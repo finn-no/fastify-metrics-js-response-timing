@@ -1,4 +1,4 @@
-# Fastify Metrics-js Prometheus
+# Fastify Metrics-js Response Timing
 
 A Fastify plugin for generating @metrics/client (https://www.npmjs.com/package/@metrics/client) route timing metrics.
 
