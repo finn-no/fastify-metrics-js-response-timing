@@ -58,10 +58,10 @@ class FastifyMetricsJSResponseTiming {
 
             fastify.addHook('onResponse', (request, reply, next) => {
                 if (request.timingMetrics.histogram) {
-                    const { method } = request.req;
+                    const { method } = request.raw;
                     const statusCode = this.groupStatusCodes
-                        ? `${Math.floor(reply.res.statusCode / 100)}xx`
-                        : reply.res.statusCode;
+                        ? `${Math.floor(reply.raw.statusCode / 100)}xx`
+                        : reply.raw.statusCode;
 
                     request.timingMetrics.histogram({
                         labels: {
@@ -75,6 +75,9 @@ class FastifyMetricsJSResponseTiming {
             });
 
             done();
+        },{
+            fastify: '^3.0.0',
+            name: 'fastify-metrics-js-response-timing',
         });
     }
 }
