@@ -1,6 +1,6 @@
 {
   "name": "fastify-metrics-js-response-timing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Fastify plugin using @metrics/client (https://www.npmjs.com/package/@metrics/client) to produce metric streams reporting metrics about route response times",
   "main": "index.js",
   "scripts": {
