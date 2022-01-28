@@ -40,7 +40,7 @@ class FastifyMetricsJSResponseTiming {
 
     plugin() {
         return fp((fastify, opts, done) => {
-            fastify.decorateRequest('timingMetrics', {});
+            fastify.decorateRequest('timingMetrics', null);
 
             fastify.addHook('onRequest', (request, reply, next) => {
                 if (
