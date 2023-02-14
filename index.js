@@ -1,7 +1,7 @@
 'use strict';
 
-const fp = require('fastify-plugin');
-const Metrics = require('@metrics/client');
+import fp from 'fastify-plugin';
+import Metrics from '@metrics/client';
 
 class FastifyMetricsJSResponseTiming {
     constructor({ groupStatusCodes = false, timeAllRoutes = true } = {}) {
@@ -57,7 +57,7 @@ class FastifyMetricsJSResponseTiming {
             });
 
             fastify.addHook('onResponse', (request, reply, next) => {
-                if (request.timingMetrics.histogram) {
+                if (request?.timingMetrics?.histogram) {
                     const { method } = request.raw;
                     const statusCode = this.groupStatusCodes
                         ? `${Math.floor(reply.raw.statusCode / 100)}xx`
@@ -76,10 +76,9 @@ class FastifyMetricsJSResponseTiming {
 
             done();
         },{
-            fastify: '^3.0.0',
             name: 'fastify-metrics-js-response-timing',
         });
     }
 }
 
-module.exports = FastifyMetricsJSResponseTiming;
+export default FastifyMetricsJSResponseTiming;
