@@ -1,9 +1,7 @@
-'use strict';
-
-const { test } = require('tap');
-const fastify = require('fastify');
-const supertest = require('supertest');
-const Plugin = require('./index');
+import { test } from 'tap';
+import fastify from 'fastify';
+import supertest from 'supertest';
+import Plugin from './index.js';
 
 test('timeAllRoutes = false: No metrics are generated when route url config is not explicitly defined', async t => {
     const app = fastify();
@@ -12,7 +10,7 @@ test('timeAllRoutes = false: No metrics are generated when route url config is n
     app.get('/my-route', (request, reply) => {
         reply.send('');
     });
-    const address = await app.listen();
+    const address = await app.listen({ port: 0 });
 
     const buffer = [];
 
@@ -44,7 +42,7 @@ test('timeAllRoutes = false: Plugin generates expected histogram metric for rout
             reply.send('');
         },
     );
-    const address = await app.listen();
+    const address = await app.listen({ port: 0 });
 
     const buffer = [];
 
@@ -96,7 +94,7 @@ test('timeAllRoutes = true: Metrics are generated when route url config is not e
     app.get('/my-route', (request, reply) => {
         reply.send('');
     });
-    const address = await app.listen();
+    const address = await app.listen({ port: 0 });
 
     const buffer = [];
 
@@ -148,7 +146,7 @@ test('timeAllRoutes = true: No metrics are generated when route url config is ex
     app.get('/my-route', { config: { timing: false } }, (request, reply) => {
         reply.send('');
     });
-    const address = await app.listen();
+    const address = await app.listen({ port: 0 });
 
     const buffer = [];
 

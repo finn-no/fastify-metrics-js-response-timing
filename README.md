@@ -7,7 +7,7 @@ A Fastify plugin for generating @metrics/client (https://www.npmjs.com/package/@
 Step 1. Include and setup dependency
 
 ```js
-const ResponseTiming = require('fastify-metrics-js-response-timing');
+import ResponseTiming from 'fastify-metrics-js-response-timing';
 const reponseTiming = new ResponseTiming();
 ```
 
@@ -20,7 +20,8 @@ responseTiming.metrics.pipe(consumer);
 Step 3. Create a fastify app and include the plugin
 
 ```js
-const app = require('fastify')();
+import fastify from 'fastify';
+const app = fastify();
 app.register(responseTiming.plugin());
 ```
 
